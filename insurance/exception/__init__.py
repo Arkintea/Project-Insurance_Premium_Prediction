@@ -1,11 +1,11 @@
 import os
 import sys
 
-class project_nameException(Exception):
+class InsuranceException(Exception):
     
     def __init__(self, error_message:Exception, error_detail:sys):
         super().__init__(error_message)
-        self.error_message = project_nameException.get_detailed_error_message(error_message=error_message,
+        self.error_message = InsuranceException.get_detailed_error_message(error_message=error_message,
                                                                        error_detail=error_detail)
 
     @staticmethod
@@ -25,4 +25,4 @@ class project_nameException(Exception):
 
 
     def __repr__(self) -> str:
-        return project_nameException.__name__.str()
+        return InsuranceException.__name__.str()

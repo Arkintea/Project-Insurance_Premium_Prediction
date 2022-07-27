@@ -1,6 +1,13 @@
-numpy
 Flask
 gunicorn
-sklearn
 pandas
+sklearn
+numpy
+PyYAML
+evidently
+dill
+matplotlib
+seaborn
+nbformat
+ipykernel
 -e .
