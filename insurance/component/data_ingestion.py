@@ -47,7 +47,6 @@ class DataIngestion:
             urllib.request.urlretrieve(download_url, zip_file_path)
             logging.info(f"File :[{zip_file_path}] has been downloaded successfully.")
             return zip_file_path
-            
         except Exception as e:
             raise InsuranceException(e,sys) from e
 
@@ -66,7 +65,6 @@ class DataIngestion:
             logging.info(f"Extraction completed")
         except Exception as e:
             raise InsuranceException(e,sys) from e
-    
 
     def split_data_as_train_test(self) -> DataIngestionArtifact:
         try:
@@ -115,20 +113,16 @@ class DataIngestion:
                                                             message=f"Data ingestion completed successfully.")
             logging.info(f"Data Ingestion artifact:[{data_ingestion_artifact}]")
             return data_ingestion_artifact
-
         except Exception as e:
             raise InsuranceException(e,sys) from e
-
 
     def initiate_data_ingestion(self)-> DataIngestionArtifact:
         try:
-            rar_file_path =  self.download_data()
-            self.extract_rar_file(rar_file_path=rar_file_path)
+            zip_file_path =  self.download_data()
+            self.extract_zip_file(zip_file_path=zip_file_path)
             return self.split_data_as_train_test()
         except Exception as e:
             raise InsuranceException(e,sys) from e
-    
-
 
     def __del__(self):
         logging.info(f"{'>>'*20}Data Ingestion log completed.{'<<'*20} \n\n")
