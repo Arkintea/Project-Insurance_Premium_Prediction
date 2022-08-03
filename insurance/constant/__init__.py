@@ -10,7 +10,6 @@ ROOT_DIR = os.getcwd()  #to get current working directory
 CONFIG_DIR = "config"
 CONFIG_FILE_NAME = "config.yaml"
 CONFIG_FILE_PATH = os.path.join(ROOT_DIR, CONFIG_DIR, CONFIG_FILE_NAME)
-
 CURRENT_TIME_STAMP = get_current_time_stamp()
 
 # Training pipeline related variable
@@ -82,6 +81,8 @@ MODEL_PUSHER_MODEL_EXPORT_DIR_KEY = "model_export_dir"
 BEST_MODEL_KEY = "best_model"
 HISTORY_KEY = "history"
 MODEL_PATH_KEY = "model_path"
+
+
 BEST_MODEL_SCORE="best_model_score"
 MODEL_SCORE="model_score"
 

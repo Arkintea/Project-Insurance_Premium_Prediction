@@ -64,8 +64,21 @@ class DataValidation:
     def validate_dataset_schema(self)->bool:
         try:
             validation_status = False
-            validation_status = True
-            return validation_status 
+            schema_file_path=self.data_validation_config.schema_file_path
+            schema_data=read_yaml_file(file_path=schema_file_path)
+            schema_columns=schema_data['columns']
+            schema_datatype_dataframe=pd.DataFrame.from_dict(schema_columns,orient='index')
+            
+            train_file_path=self.data_ingestion_artifact.train_file_path
+            train_df=pd.read_csv(train_file_path)
+            
+            train_datatype_dataframe=pd.DataFrame(train_df.dtypes)
+            if schema_datatype_dataframe.equals(train_datatype_dataframe):
+                validation_status=True
+                logging.info("Data columns and datatype validation completed")
+            else:
+                logging.info("Data validation faliure : data type not same or columns name mismatch")
+            return validation_status
         except Exception as e:
             raise InsuranceException(e,sys) from e
 

@@ -1,13 +1,13 @@
-from insurance.entity.config_entity import DataIngestionConfig
-import os, sys
+from insurance.entity.config_entity import *
+from insurance.entity.artifact_entity import *
+from insurance.constant import *
 from insurance.exception import InsuranceException
 from insurance.logger import logging
-from insurance.entity.artifact_entity import DataIngestionArtifact
-import zipfile
 import numpy as np
-from six.moves import urllib
 import pandas as pd
-from insurance.constant import *
+from six.moves import urllib
+import os, sys
+import zipfile
 from sklearn.model_selection import StratifiedShuffleSplit
 
 

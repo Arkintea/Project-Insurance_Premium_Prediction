@@ -15,11 +15,11 @@ from insurance.entity.config_entity import *
 from insurance.config.configuration import Configuartion
 
 from insurance.component.data_ingestion import DataIngestion
-#from insurance.component.data_validation import DataValidation
-#from insurance.component.data_transformation import DataTransformation
-#from insurance.component.model_trainer import ModelTrainer
-#from insurance.component.model_evaluation import ModelEvaluation
-#from insurance.component.model_pusher import ModelPusher
+from insurance.component.data_validation import DataValidation
+from insurance.component.data_transformation import DataTransformation
+from insurance.component.model_trainer import ModelTrainer
+from insurance.component.model_evaluation import ModelEvaluation
+from insurance.component.model_pusher import ModelPusher
 
 from insurance.constant import EXPERIMENT_DIR_NAME, EXPERIMENT_FILE_NAME
 

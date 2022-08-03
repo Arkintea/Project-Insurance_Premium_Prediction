@@ -1,13 +1,10 @@
+numpy
 Flask
 gunicorn
-pandas
 sklearn
-numpy
+pandas
 PyYAML
 evidently
 dill
 matplotlib
-seaborn
-nbformat
-ipykernel
 -e .
