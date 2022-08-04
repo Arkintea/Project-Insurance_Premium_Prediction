@@ -7,7 +7,7 @@ from insurance.util.util import *
 import sys, os
 import numpy as np
 import pandas as pd
-#from cgi import test
+from cgi import test
 from sklearn import preprocessing
 from sklearn.base import BaseEstimator,TransformerMixin
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
@@ -16,21 +16,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 
 
-
-
-#   longitude: float
-#   latitude: float
-#   housing_median_age: float
-#   total_rooms: float
-#   total_bedrooms: float
-#   population: float
-#   households: float
-#   median_income: float
-#   median_house_value: float
-#   ocean_proximity: category
-#   income_cat: float
-
-
+"""
 class FeatureGenerator(BaseEstimator, TransformerMixin):
 
     def __init__(self, add_bedrooms_per_room=True,
@@ -38,14 +24,14 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
                  population_ix=5,
                  households_ix=6,
                  total_bedrooms_ix=4, columns=None):
-        """
+        '
         FeatureGenerator Initialization
         add_bedrooms_per_room: bool
         total_rooms_ix: int index number of total rooms columns
         population_ix: int index number of total population columns
         households_ix: int index number of  households columns
         total_bedrooms_ix: int index number of bedrooms columns
-        """
+        '
         try:
             self.columns = columns
             if self.columns is not None:
@@ -84,8 +70,7 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
         except Exception as e:
             raise InsuranceException(e, sys) from e
 
-
-
+"""
 
 
 class DataTransformation:
@@ -99,13 +84,11 @@ class DataTransformation:
             self.data_validation_artifact = data_validation_artifact
             self.data_transformation_config = data_transformation_config
             
-
         except Exception as e:
             raise InsuranceException(e,sys) from e
 
-    
 
-    def get_data_transformer_object(self)->ColumnTransformer:
+    def get_data_transformer_object(self) -> ColumnTransformer:
         try:
             schema_file_path = self.data_validation_artifact.schema_file_path
             dataset_schema = read_yaml_file(file_path=schema_file_path)
@@ -123,7 +106,6 @@ class DataTransformation:
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
 
-
             preprocessing = ColumnTransformer([('num_pipeline', num_pipeline, numerical_columns),
                                                 ('cat_pipeline', cat_pipeline, categorical_columns),])
 
@@ -132,11 +114,10 @@ class DataTransformation:
             raise InsuranceException(e,sys) from e   
 
 
-    def initiate_data_transformation(self)->DataTransformationArtifact:
+    def initiate_data_transformation(self) -> DataTransformationArtifact:
         try:
             logging.info(f"Obtaining preprocessing object.")
             preprocessing_obj = self.get_data_transformer_object()
-
 
             logging.info(f"Obtaining training and test file path.")
             train_file_path = self.data_ingestion_artifact.train_file_path

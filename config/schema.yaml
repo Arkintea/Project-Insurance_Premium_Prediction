@@ -12,7 +12,6 @@ numerical_columns:
   - bmi
   - children
 
-
 categorical_columns:
   - sex
   - smoker

@@ -60,8 +60,7 @@ class Pipeline(Thread):
 
     def start_data_transformation(self, 
                                   data_ingestion_artifact: DataIngestionArtifact,
-                                  data_validation_artifact: DataValidationArtifact
-                                  ) -> DataTransformationArtifact:
+                                  data_validation_artifact: DataValidationArtifact) -> DataTransformationArtifact:
         try:
             data_transformation = DataTransformation(
                 data_transformation_config=self.config.get_data_transformation_config(),

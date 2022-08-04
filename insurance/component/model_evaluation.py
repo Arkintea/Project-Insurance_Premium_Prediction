@@ -31,11 +31,10 @@ class ModelEvaluation:
             model_evaluation_file_path = self.model_evaluation_config.model_evaluation_file_path
 
             if not os.path.exists(model_evaluation_file_path):
-                write_yaml_file(file_path=model_evaluation_file_path,
-                                )
+                write_yaml_file(file_path=model_evaluation_file_path,)
                 return model
-            model_eval_file_content = read_yaml_file(file_path=model_evaluation_file_path)
 
+            model_eval_file_content = read_yaml_file(file_path=model_evaluation_file_path)
             model_eval_file_content = dict() if model_eval_file_content is None else model_eval_file_content
 
             if BEST_MODEL_KEY not in model_eval_file_content:
@@ -59,9 +58,7 @@ class ModelEvaluation:
 
             logging.info(f"Previous eval result: {model_eval_content}")
             eval_result = {
-                BEST_MODEL_KEY: {
-                    MODEL_PATH_KEY: model_evaluation_artifact.evaluated_model_path,
-                }
+                BEST_MODEL_KEY: {MODEL_PATH_KEY: model_evaluation_artifact.evaluated_model_path,}
             }
 
             if previous_best_model is not None:
@@ -90,11 +87,9 @@ class ModelEvaluation:
             schema_file_path = self.data_validation_artifact.schema_file_path
 
             train_dataframe = load_data(file_path=train_file_path,
-                                                           schema_file_path=schema_file_path,
-                                                           )
+                                        schema_file_path=schema_file_path,)
             test_dataframe = load_data(file_path=test_file_path,
-                                                          schema_file_path=schema_file_path,
-                                                          )
+                                        schema_file_path=schema_file_path,)
             schema_content = read_yaml_file(file_path=schema_file_path)
             target_column_name = schema_content[TARGET_COLUMN_KEY]
 
@@ -127,14 +122,12 @@ class ModelEvaluation:
                                                                y_train=train_target_arr,
                                                                X_test=test_dataframe,
                                                                y_test=test_target_arr,
-                                                               base_accuracy=self.model_trainer_artifact.model_accuracy,
-                                                               )
+                                                               base_accuracy=self.model_trainer_artifact.model_accuracy,)
             logging.info(f"Model evaluation completed. model metric artifact: {metric_info_artifact}")
 
             if metric_info_artifact is None:
                 response = ModelEvaluationArtifact(is_model_accepted=False,
-                                                   evaluated_model_path=trained_model_file_path
-                                                   )
+                                                   evaluated_model_path=trained_model_file_path)
                 logging.info(response)
                 return response
 

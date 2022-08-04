@@ -37,6 +37,8 @@ DATA_VALIDATION_ARTIFACT_DIR_NAME="data_validation"
 DATA_VALIDATION_REPORT_FILE_NAME_KEY = "report_file_name"
 DATA_VALIDATION_REPORT_PAGE_FILE_NAME_KEY = "report_page_file_name"
 
+DATA_INGESTION_RAW_DATA_FILE='raw_data_file'
+
 
 # Data Transformation related variables
 DATA_TRANSFORMATION_ARTIFACT_DIR = "data_transformation"
@@ -53,7 +55,6 @@ NUMERICAL_COLUMN_KEY="numerical_columns"
 CATEGORICAL_COLUMN_KEY = "categorical_columns"
 TARGET_COLUMN_KEY="target_column"
 DATASET_SCHEMA_COLUMNS_KEY=  "columns"
-
 
 
 

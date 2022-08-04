@@ -6,5 +6,6 @@ pandas
 PyYAML
 evidently
 dill
+pymongo
 matplotlib
 -e .
