@@ -1,15 +1,15 @@
-from cmath import log
-import importlib
-from pyexpat import model
-import numpy as np
-import yaml
-import os
-import sys
-from insurance.logger import logging
+from sklearn.metrics import r2_score,mean_squared_error
 from insurance.exception import InsuranceException
+from insurance.logger import logging
 from collections import namedtuple
 from typing import List
-from sklearn.metrics import r2_score,mean_squared_error
+from pyexpat import model
+from cmath import log
+import numpy as np
+import importlib
+import yaml
+import sys
+import os
 
 
 GRID_SEARCH_KEY = 'grid_search'

@@ -1,3 +1,4 @@
+from urllib.request import urlretrieve
 from insurance.entity.config_entity import *
 from insurance.entity.artifact_entity import *
 from insurance.constant import *
@@ -35,9 +36,9 @@ class DataIngestion:
             #check existence of folder
             os.makedirs(zip_download_url, exist_ok=True)
 
-            insurance_file_name = "insurance"
+            #insurance_file_name = "insurance"
 
-            #insurance_file_name = os.path.basename(download_url)
+            insurance_file_name = os.path.basename(download_url)
 
             zip_file_path = os.path.join(zip_download_url, insurance_file_name)
 

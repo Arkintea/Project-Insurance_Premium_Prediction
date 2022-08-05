@@ -21,8 +21,8 @@ PIPELINE_DIR = os.path.join(ROOT_DIR, PIPELINE_FOLDER_NAME)
 MODEL_DIR = os.path.join(ROOT_DIR, SAVED_MODELS_DIR_NAME)
 
 
-INSURANCE_DATA_KEY = "housing_data"
-EXPENSES_VALUE_KEY = "median_house_value"
+INSURANCE_DATA_KEY = "insurance_data"
+EXPENSES_VALUE_KEY = "expenses"
 
 
 app = Flask(__name__)
@@ -118,10 +118,10 @@ def predict():
         
         insurance_df = insurance_data.get_insurance_input_data_frame()
         insurance_predictor = InsurancePredictor(model_dir=MODEL_DIR)
-        expenses_value = insurance_predictor.predict(X=insurance_df)
+        expenses = insurance_predictor.predict(X=insurance_df)
         context = {
             INSURANCE_DATA_KEY: insurance_data.get_insurance_data_as_dict(),
-            EXPENSES_VALUE_KEY: expenses_value,}
+            EXPENSES_VALUE_KEY: expenses,}
         
         return render_template('predict.html', context=context)
     return render_template("predict.html", context=context)

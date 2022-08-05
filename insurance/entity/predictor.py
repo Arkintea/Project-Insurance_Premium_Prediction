@@ -47,8 +47,7 @@ class InsuranceData:
                 "children": [self.children],
                 "smoker": [self.smoker],
                 "region": [self.region],
-                "expenses": [self.expenses],
-                }
+                "expenses": [self.expenses],}
 
             return input_data
 

@@ -30,8 +30,7 @@ version=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
 packages=find_packages(), 
-install_requires=get_requirements_list()
-)
+install_requires=get_requirements_list())
 
 #find_packages is used to install -e . hence it must be removed in get_requirements_list(), 
 # because it can't be installed twice
