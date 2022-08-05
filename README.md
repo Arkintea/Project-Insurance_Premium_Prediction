@@ -106,7 +106,7 @@ docker stop <container_id>
 
 To install ipykernel
 ```
-install ipykernel
+pip install ipykernel
 ```
 
 -e . 
