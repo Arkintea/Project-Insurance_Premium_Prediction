@@ -1,7 +1,10 @@
 best_model:
   model_path: C:\Users\akintayo.akinpelu\Desktop\DS+ML+DL\ineuron\Projects\Machine
-    Learning\Project-Insurance_Premium_Prediction\insurance\artifact\model_trainer\2022-08-15-21-19-55\trained_model\model.pkl
+    Learning\Project-Insurance_Premium_Prediction\insurance\artifact\model_trainer\2022-09-07-17-57-32\trained_model\model.pkl
 history:
   2022-08-15-21-19-55:
     model_path: C:\Users\akintayo.akinpelu\Desktop\DS+ML+DL\ineuron\Projects\Machine
       Learning\Project-Insurance_Premium_Prediction\insurance\artifact\model_trainer\2022-08-04-14-25-25\trained_model\model.pkl
+  2022-09-07-17-57-32:
+    model_path: C:\Users\akintayo.akinpelu\Desktop\DS+ML+DL\ineuron\Projects\Machine
+      Learning\Project-Insurance_Premium_Prediction\insurance\artifact\model_trainer\2022-08-15-21-19-55\trained_model\model.pkl
