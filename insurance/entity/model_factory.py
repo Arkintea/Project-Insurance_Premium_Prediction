@@ -1,4 +1,4 @@
-from sklearn.metrics import r2_score,mean_squared_error
+from sklearn.metrics import r2_score, mean_squared_error
 from insurance.exception import InsuranceException
 from insurance.logger import logging
 from collections import namedtuple
@@ -35,7 +35,7 @@ BestModel = namedtuple("BestModel", ["model_serial_number",
                                      "model",
                                      "best_model",
                                      "best_parameters",
-                                     "best_score", ])
+                                     "best_score"])
 
 MetricInfoArtifact = namedtuple("MetricInfoArtifact",
                                 ["model_name", 
@@ -360,7 +360,7 @@ class ModelFactory:
         except Exception as e:
             raise InsuranceException(e, sys) from e
 
-    def get_best_model(self, X, y,base_accuracy=0.6) -> BestModel:
+    def get_best_model(self, X, y, base_accuracy=0.6) -> BestModel:
         try:
             logging.info("Started Initializing model from config file")
             initialized_model_list = self.get_initialized_model_list()

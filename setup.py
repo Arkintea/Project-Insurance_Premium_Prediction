@@ -3,7 +3,7 @@ from typing import List
 
 #Declaring variables for setup functions
 PROJECT_NAME = "Insurance Premium Prediction"
-VERSION = "0.0.1" 
+VERSION = "0.0.2" 
 AUTHOR = "Akintayo Akinpelu"
 DESCRIPTION = "This is an end-to-end MLOPs Project"
 REQUIREMENT_FILE_NAME = "requirements.txt"

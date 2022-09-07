@@ -96,7 +96,7 @@ class DataTransformation:
             numerical_columns = dataset_schema[NUMERICAL_COLUMN_KEY]
             categorical_columns = dataset_schema[CATEGORICAL_COLUMN_KEY]
 
-            num_pipeline = Pipeline(steps=[('imputer', SimpleImputer(strategy="median")),
+            num_pipeline = Pipeline(steps=[('imputer', SimpleImputer(strategy="most_frequent")),
                                             ('scaler', StandardScaler())])
 
             cat_pipeline = Pipeline(steps=[('imputer', SimpleImputer(strategy="most_frequent")),
@@ -163,7 +163,7 @@ class DataTransformation:
             preprocessing_obj_file_path = self.data_transformation_config.preprocessed_object_file_path
 
             logging.info(f"Saving preprocessing object.")
-            save_object(file_path=preprocessing_obj_file_path,obj=preprocessing_obj)
+            save_object(file_path=preprocessing_obj_file_path, obj=preprocessing_obj)
 
             data_transformation_artifact = DataTransformationArtifact(is_transformed=True,
                                                         message="Data transformation successfull.", 

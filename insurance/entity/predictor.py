@@ -14,7 +14,7 @@ class InsuranceData:
                  children : int,
                  smoker : str,
                  region : str,
-                 expenses : float):
+                 expenses : float = None):
 
         try:
             self.age = age
@@ -46,8 +46,7 @@ class InsuranceData:
                 "bmi": [self.bmi],
                 "children": [self.children],
                 "smoker": [self.smoker],
-                "region": [self.region],
-                "expenses": [self.expenses],}
+                "region": [self.region]}
 
             return input_data
 

@@ -84,8 +84,8 @@ HISTORY_KEY = "history"
 MODEL_PATH_KEY = "model_path"
 
 
-BEST_MODEL_SCORE="best_model_score"
-MODEL_SCORE="model_score"
+#BEST_MODEL_SCORE="best_model_score"
+#MODEL_SCORE="model_score"
 
 
 EXPERIMENT_DIR_NAME="experiment"

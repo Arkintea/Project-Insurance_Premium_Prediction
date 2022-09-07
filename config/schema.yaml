@@ -1,11 +1,11 @@
 columns:
-  age: int64
+  age: int
   sex: object
-  bmi: float64
-  children: int64
+  bmi: float
+  children: int
   smoker: object
   region: object
-  expenses: float64
+  expenses: float
 
 numerical_columns:
   - age

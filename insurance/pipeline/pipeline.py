@@ -1,7 +1,6 @@
 from collections import namedtuple
 from datetime import datetime
-import uuid
-import os, sys
+import uuid, os, sys
 import pandas as pd
 
 from threading import Thread

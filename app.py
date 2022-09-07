@@ -1,4 +1,4 @@
-from flask import send_file, abort, render_template, Flask, request
+from flask import Flask, request, send_file, abort, render_template
 from wsgiref import simple_server
 from insurance.util.util import read_yaml_file, write_yaml_file
 from matplotlib.style import context
@@ -102,26 +102,26 @@ def predict():
     }
 
     if request.method == 'POST':
-        age = int(request.form.get('age'))
-        sex = request.form.get('sex')
-        bmi = float(request.form.get('bmi'))
-        children = int(request.form.get('children'))
-        smoker = request.form.get('smoker')
-        region = request.form.get('region')
+        age = int(request.form['age'])
+        sex = request.form['sex']
+        bmi = float(request.form['bmi'])
+        children = int(request.form['children'])
+        smoker = request.form['smoker']
+        region = request.form['region']
 
         insurance_data = InsuranceData(age=age, 
                                     sex=sex, 
                                     bmi=bmi, 
                                     children=children, 
                                     smoker=smoker, 
-                                    region=region,)
+                                    region=region)
         
         insurance_df = insurance_data.get_insurance_input_data_frame()
         insurance_predictor = InsurancePredictor(model_dir=MODEL_DIR)
-        expense = insurance_predictor.predict(X=insurance_df)
+        expenses = insurance_predictor.predict(X=insurance_df)
         context = {
             INSURANCE_DATA_KEY: insurance_data.get_insurance_data_as_dict(),
-            EXPENSES_VALUE_KEY: expense,}
+            EXPENSES_VALUE_KEY: expenses,}
         
         return render_template('predict.html', context=context)
     return render_template("predict.html", context=context)

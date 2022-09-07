@@ -8,4 +8,7 @@ evidently
 dill
 pymongo
 matplotlib
+seaborn
+scikit-metrics
+scikit-learn
 -e .
